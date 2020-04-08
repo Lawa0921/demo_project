@@ -1,6 +1,11 @@
+<%= link_to "發布消息", new_article_path %>
 <ul>
   <% @articles.each do |article| %>
-    <li><%= article.title %></li>
-    <li><%= article.content %></li>
+    <li>
+      <%= article.title %>
+      <%= article.content %>
+      <%= link_to "編輯", edit_article_path(article[:id]) %>
+      <%= link_to "刪除", article, data: {method: 'delete', confirm: '確定刪除嗎？'} %>
+    </li>
   <% end %>
 </ul>
