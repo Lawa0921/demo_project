@@ -4,6 +4,7 @@
     <li>
       <%= article.title %>
       <%= article.content %>
+      <%= link_to "查看", article %>
       <%= link_to "編輯", edit_article_path(article[:id]) %>
       <%= link_to "刪除", article, data: {method: 'delete', confirm: '確定刪除嗎？'} %>
     </li>
